@@ -6,6 +6,7 @@ package com.web.platform.utils;
  * @create 2022-05-05 21:18
  */
 public enum ResponseEnum {
+    USER_IS_EXISTED(0, "用户已存在"),
     SUCCESS(1, "成功"),
     FAIL(0, "失败"),
     ;
