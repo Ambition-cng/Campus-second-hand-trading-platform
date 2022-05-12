@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @author hly
- * @Description:
+ * @Description: 主启动函数
  * @create 2022-05-06 21:10
  */
 @SpringBootApplication

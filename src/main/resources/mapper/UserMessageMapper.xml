@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.web.platform.mapper.UserMessageMapper">
+    <resultMap id="User" type="com.web.platform.pojo.User">
+        <id column="uid" property="uid" jdbcType="VARCHAR"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="phone" property="phone" jdbcType="CHAR"/>
+        <result column="stuno" property="stuno" jdbcType="CHAR"/>
+        <result column="gender" property="gender" jdbcType="CHAR"/>
+    </resultMap>
+
+    <insert id="insertUser" parameterType="com.web.platform.pojo.User" useGeneratedKeys="false" keyProperty="uid">
+        insert into trading_platform.user (uid,username,password, phone, stuno, gender)
+        values (#{user.uid},#{user.username},#{user.password},#{user.phone},#{user.stuno},#{user.gender})
+    </insert>
+    <select id="getUserByUid" parameterType="string" resultType="com.web.platform.pojo.User">
+        select uid,username,password,phone,stuno,gender
+        from trading_platform.user
+        where uid = (#{uid})
+    </select>
+
+
+</mapper>

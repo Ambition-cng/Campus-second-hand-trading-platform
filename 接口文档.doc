@@ -1,0 +1,151 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+    xmlns:o="urn:schemas-microsoft-com:office:office"
+    xmlns:w="urn:schemas-microsoft-com:office:word"
+    xmlns="http://www.w3.org/TR/REC-html40">
+    <head><meta http-equiv=Content-Type content="text/html; charset=utf-8">
+    <style type="text/css">
+        table  
+        {  
+            border-collapse: collapse;
+            border: none;  
+            width: 100%;  
+        }  
+        td,tr  
+        {  
+            border: solid #CCC 1px;
+            padding:3px;
+            font-size:9pt;
+        } 
+        .codestyle{
+            word-break: break-all;
+            mso-highlight:rgb(252, 252, 252);
+            padding-left: 5px; background-color: rgb(252, 252, 252); border: 1px solid rgb(225, 225, 232);
+        }
+        img {
+            width:100;
+        }
+    </style>
+    <meta name=ProgId content=Word.Document>
+    <meta name=Generator content="Microsoft Word 11">
+    <meta name=Originator content="Microsoft Word 11">
+    <xml><w:WordDocument><w:View>Print</w:View></xml></head>
+    <body><h1>注册接口</h1><div style="margin-left:20px;"><h5>简要描述</h5>
+<ul>
+<li>用户注册</li>
+</ul>
+<h5>请求URL</h5>
+<ul>
+<li><code>http://localhost:8080/user/register</code> </li>
+</ul>
+<h5>请求方式</h5>
+<ul>
+<li>post</li>
+</ul>
+<h5>请求参数示例</h5>
+<table width='100%' class='codestyle'><pre><code>{
+    "uid": "cfff sb",
+    "username": "nuuj",
+    "password": "123456",
+    "phone": "11111111111",
+    "stuno": "12345678901",
+    "gender": "男"
+}
+</code></pre></table>
+<h5>json字段说明</h5>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">字段名</th>
+<th style="text-align: left;">必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">uid</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>用户账号</td>
+</tr>
+<tr>
+<td style="text-align: left;">username</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>用户昵称</td>
+</tr>
+<tr>
+<td style="text-align: left;">password</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td style="text-align: left;">phone</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td style="text-align: left;">stuno</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>用户学号</td>
+</tr>
+<tr>
+<td style="text-align: left;">gender</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h5>成功返回示例</h5>
+<table width='100%' class='codestyle'><pre><code>{
+    "code": 1,
+    "msg": "成功",
+    "data": {
+        "obj": {
+            "uid": "cfff sb",
+            "username": "nuuj",
+            "password": "123456",
+            "phone": "11111111111",
+            "stuno": "12345678901",
+            "gender": "男"
+        },
+        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjZmZmIHNiIn0.8lT7c4bvOyyW0mVIC0r1aqdv7Gy-gdJK3sjBVS1Ek94"
+    }
+}
+</code></pre></table>
+<h5>失败返回示例</h5>
+<table width='100%' class='codestyle'><pre><code>{
+    "code": 0,
+    "msg": "用户已存在",
+    "data": null
+}
+</code></pre></table>
+<h5>失败返回示例的参数说明</h5>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">code</td>
+<td style="text-align: left;">string</td>
+<td>无</td>
+</tr>
+<tr>
+<td style="text-align: left;">msg</td>
+<td style="text-align: left;">string</td>
+<td>无</td>
+</tr>
+<tr>
+<td style="text-align: left;">data</td>
+<td style="text-align: left;">object</td>
+<td>无</td>
+</tr>
+</tbody>
+</table></div></body></html>
