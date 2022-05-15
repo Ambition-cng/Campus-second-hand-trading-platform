@@ -19,4 +19,12 @@ public interface UserService {
      * @return
      */
     ResponseResult<TokenBO> userRegister(User user);
+
+    /**
+     * 用户登录
+     * @param uid
+     * @param password
+     * @return
+     */
+    ResponseResult<User> userLogin(String uid, String password);
 }

@@ -6,7 +6,13 @@ package com.web.platform.utils;
  * @create 2022-05-05 21:18
  */
 public enum ResponseEnum {
+    /**
+     * 登录注册错误
+     */
+    USER_LOGIN_ERROR(0, "账号不存在或密码错误"),
     USER_IS_EXISTED(0, "用户已存在"),
+
+
     SUCCESS(1, "成功"),
     FAIL(0, "失败"),
     ;

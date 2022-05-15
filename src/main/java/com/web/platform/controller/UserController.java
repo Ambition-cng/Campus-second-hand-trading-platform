@@ -27,11 +27,24 @@ public class UserController {
 
     /**
      * 已上线
+     * 用户注册接口
      * @param user
      * @return
      */
     @PostMapping("/register")
     public ResponseResult<TokenBO> userRegister(@RequestBody User user){
         return userService.userRegister(user);
+    }
+
+    /**
+     * 已上线
+     * 用户登录接口
+     * @param uid
+     * @param password
+     * @return
+     */
+    @PostMapping("/login")
+    public ResponseResult<User> userLogin(String uid, String password){
+        return userService.userLogin(uid, password);
     }
 }
