@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.web.platform.mapper.ItemMessageMapper">
+    <insert id="publishItem" parameterType="com.web.platform.pojo.Item" useGeneratedKeys="true" keyProperty="itemid">
+        insert into trading_platform.item (username,itemname,remark,price,sort,count,image)
+        values (#{item.username},#{item.itemname},#{item.remark},#{item.price},#{item.sort},#{item.count},#{item.image})
+    </insert>
+    <insert id="insertItem" useGeneratedKeys="true">
+        insert into trading_platform.user_item(uid,itemid)
+        value (#{uid},#{itemId})
+    </insert>
+</mapper>
