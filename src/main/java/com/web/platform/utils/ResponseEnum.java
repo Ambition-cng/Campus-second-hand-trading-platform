@@ -12,6 +12,12 @@ public enum ResponseEnum {
     USER_LOGIN_ERROR(0, "账号不存在或密码错误"),
     USER_IS_EXISTED(0, "用户已存在"),
 
+    /**
+     * 商品相关错误
+     */
+    ITEM_IS_NOT_EXISTED(0, "商品不存在"),
+    USER_NOT_PUBLISH_ITEM(0, "用户还未发布商品"),
+
 
     SUCCESS(1, "成功"),
     FAIL(0, "失败"),

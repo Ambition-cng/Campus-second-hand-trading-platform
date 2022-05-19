@@ -4,6 +4,9 @@ import com.web.platform.pojo.Item;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Iterator;
+import java.util.List;
+
 /**
  * @author hly
  * @Description:
@@ -28,4 +31,18 @@ public interface ItemMessageMapper {
      * @return
      */
     int insertItem(String uid, Integer itemId);
+
+    /**
+     * 通过 id 获取商品
+     * @param itemId
+     * @return
+     */
+    Item getItemById(String itemId);
+
+    /**
+     * 通过 uid 获取自己发布的商品列表
+     * @param uid
+     * @return
+     */
+    List<Item> getItemListByUid(String uid);
 }

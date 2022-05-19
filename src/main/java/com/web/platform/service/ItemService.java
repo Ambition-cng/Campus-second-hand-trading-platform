@@ -4,6 +4,8 @@ import com.web.platform.pojo.Item;
 import com.web.platform.utils.ResponseResult;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * @author hly
  * @Description: TODO
@@ -17,4 +19,8 @@ public interface ItemService {
      * @return
      */
     ResponseResult<Item> publishItem(Item item);
+
+    ResponseResult<Item> getItemById(String itemId);
+
+    ResponseResult<List<Item>> getItemListByUid(String uid);
 }
