@@ -17,6 +17,8 @@ public enum ResponseEnum {
      */
     ITEM_IS_NOT_EXISTED(0, "商品不存在"),
     USER_NOT_PUBLISH_ITEM(0, "用户还未发布商品"),
+    USER_NOT_REQUEST_ITEM(0, "用户还未求购任何商品"),
+    CATEGORY_OF_ITEM_IS_NOT_EXISTED(0, "不存在该分类的商品"),
 
 
     SUCCESS(1, "成功"),

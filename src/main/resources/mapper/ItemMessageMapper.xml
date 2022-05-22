@@ -9,6 +9,34 @@
         insert into trading_platform.user_item(uid,itemid)
         value (#{uid},#{itemId})
     </insert>
+    <insert id="requestItem" parameterType="com.web.platform.pojo.Item" useGeneratedKeys="true" keyProperty="itemid">
+        insert into trading_platform.want_item (username,itemname,remark,price,sort,image)
+        values (#{item.username},#{item.itemname},#{item.remark},#{item.price},#{item.sort},#{item.image})
+    </insert>
+    <insert id="insertReItem" useGeneratedKeys="true">
+        insert into trading_platform.user_want_item(uid,itemid)
+        value (#{uid},#{itemId})
+    </insert>
+    <delete id="deleteItem">
+        delete
+        from trading_platform.item
+        where itemid = (#{itemId})
+    </delete>
+    <delete id="deleteReItem">
+        delete
+        from trading_platform.want_item
+        where itemid = (#{itemId})
+    </delete>
+    <delete id="removeItem">
+        delete
+        from trading_platform.user_item
+        where itemid = (#{itemId})
+    </delete>
+    <delete id="removeReItem">
+        delete
+        from trading_platform.user_want_item
+        where itemid = (#{itemId})
+    </delete>
     <select id="getItemById"  resultType="com.web.platform.pojo.Item">
         select itemid,itemname,remark,price,sort,count,image
         from trading_platform.item it
@@ -19,5 +47,21 @@
         from trading_platform.item it inner join trading_platform.user_item ut
         on it.itemid = ut.itemid
         where ut.uid = (#{uid})
+    </select>
+    <select id="getReItemListByUid" resultType="com.web.platform.pojo.Item">
+        select it.itemid,it.itemname,it.remark,it.price,it.sort,it.image
+        from trading_platform.want_item it inner join trading_platform.user_want_item ut
+        on it.itemid = ut.itemid
+        where ut.uid = (#{uid})
+    </select>
+    <select id="selectItemByCategory" resultType="com.web.platform.pojo.Item">
+        select it.username,it.itemname,it.remark,it.price,it.sort,it.count,it.image
+        from trading_platform.item it
+        where it.sort = (#{category})
+    </select>
+    <select id="selectItemByName" resultType="com.web.platform.pojo.Item">
+        select it.username,it.itemname,it.remark,it.price,it.sort,it.count,it.image
+        from trading_platform.item it
+        where it.itemname = (#{itemName})
     </select>
 </mapper>
