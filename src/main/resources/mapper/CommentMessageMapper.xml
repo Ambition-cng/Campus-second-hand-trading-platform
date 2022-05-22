@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.web.platform.mapper.CommentMessageMapper">
+    <insert id="addItemComment" useGeneratedKeys="true" keyProperty="commentid">
+        insert into trading_platform.item_comment (itemid,content)
+        value (#{comment.itemid},#{comment.content})
+    </insert>
+    <insert id="addWantItemComment" useGeneratedKeys="true" keyProperty="commentid">
+        insert into trading_platform.want_item_comment (itemid,content)
+        value (#{comment.itemid},#{comment.content})
+    </insert>
+    <delete id="deleteItemComment">
+        delete
+        from trading_platform.item_comment
+        where commentid = (#{commentId})
+    </delete>
+    <delete id="deleteWantItemComment">
+        delete
+        from trading_platform.want_item_comment
+        where commentid = (#{commentId})
+    </delete>
+    <select id="selectItemCommentById" resultType="com.web.platform.pojo.Comment">
+        select *
+        from trading_platform.item_comment
+        where itemid = (#{itemId})
+    </select>
+    <select id="selectWantItemCommentById" resultType="com.web.platform.pojo.Comment">
+        select *
+        from trading_platform.want_item_comment
+        where itemid = (#{itemId})
+    </select>
+</mapper>
