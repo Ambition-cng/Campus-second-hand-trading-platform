@@ -21,6 +21,11 @@ public enum ResponseEnum {
     CATEGORY_OF_ITEM_IS_NOT_EXISTED(0, "不存在该分类的商品"),
 
 
+    /**
+     * 留言相关错误
+     */
+    NO_COMMENTS(0, "无留言"),
+
     SUCCESS(1, "成功"),
     FAIL(0, "失败"),
     ;

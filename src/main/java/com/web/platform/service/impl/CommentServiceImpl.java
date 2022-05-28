@@ -56,7 +56,7 @@ public class CommentServiceImpl implements CommentService {
     public ResponseResult<List<Comment>> getItemCommentById(Integer itemId) {
         List<Comment> commentList = commentMessageMapper.selectItemCommentById(itemId);
         if (commentList.size() == 0){
-            return ResponseResult.fail(ResponseEnum.USER_NOT_PUBLISH_ITEM.getCode(), ResponseEnum.USER_NOT_PUBLISH_ITEM.getMsg());
+            return ResponseResult.fail(ResponseEnum.NO_COMMENTS.getCode(), ResponseEnum.NO_COMMENTS.getMsg());
         }else{
             return ResponseResult.ok(commentList);
         }
@@ -66,7 +66,7 @@ public class CommentServiceImpl implements CommentService {
     public ResponseResult<List<Comment>> getWantItemCommentById(Integer itemId) {
         List<Comment> commentList = commentMessageMapper.selectWantItemCommentById(itemId);
         if (commentList.size() == 0){
-            return ResponseResult.fail(ResponseEnum.USER_NOT_PUBLISH_ITEM.getCode(), ResponseEnum.USER_NOT_PUBLISH_ITEM.getMsg());
+            return ResponseResult.fail(ResponseEnum.NO_COMMENTS.getCode(), ResponseEnum.NO_COMMENTS.getMsg());
         }else{
             return ResponseResult.ok(commentList);
         }
