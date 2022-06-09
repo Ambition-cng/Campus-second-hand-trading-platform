@@ -40,4 +40,14 @@ public class UserServiceImpl implements UserService {
         }
         return ResponseResult.fail();
     }
+
+    @Override
+    public ResponseResult<User> userLogin(String uid, String password) {
+        User user = userMessageMapper.getUser(uid, password);
+        if( user != null){
+            return ResponseResult.ok(user);
+        }else {
+            return ResponseResult.fail(ResponseEnum.USER_LOGIN_ERROR.getCode(), ResponseEnum.USER_LOGIN_ERROR.getMsg());
+        }
+    }
 }

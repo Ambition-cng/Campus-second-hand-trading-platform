@@ -17,7 +17,12 @@
     <select id="getUserByUid" parameterType="string" resultType="com.web.platform.pojo.User">
         select uid,username,password,phone,stuno,gender
         from trading_platform.user
-        where uid = (#{uid})
+        where uid = (#{uid}) limit 1
+    </select>
+    <select id="getUser" resultType="com.web.platform.pojo.User">
+        select uid,username,password,phone,stuno,gender
+        from trading_platform.user
+        where uid = (#{uid}) and password = (#{password})
     </select>
 
 
